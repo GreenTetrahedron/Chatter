@@ -64,7 +64,7 @@ export class Chat {
   }
 
   tryAgain() {
-    if (!this.waitingForMessage() || this.inputText == null || this.inputText == "")
+    if (!this.waitingForMessage())
         return;
 
     this.handleChatObservable(this.chatService.retryLastMessage());
