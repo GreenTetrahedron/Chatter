@@ -54,17 +54,12 @@ The frontend communicates with the Worker via the `apiUrl` environment variable.
 
 ### Configuring the Worker
 
-The Worker leverages CORS to only allow the frontend to send requests to the Worker via a browser. To do this, it needs to know what URL the frontend is hosted on.
+The table below details the environment variables required by the worker and explains each of their purposes.
 
-For Development:
-1. Create a `.dev.vars` file in the `chatter-worker-ai` directory.
-2. Add the following line to specify your development frontend URL:
-
-   ```bash
-   PAGE_URL="<Your frontend URL>"
-   ```
-
-For production, configure the same `PAGE_URL` in your Cloudflare Worker environment settings.
+| Environment Variable | Purpose | Example Expected Value |
+| -- | -- | -- |
+| `PAGE_URL` | Specifies the URL where the frontend is hosted on | https://chatter-di8.pages.dev/ |
+| `MODEL` | Specifies the Cloudflare AI Model ID to use | @cf/meta/llama-3.1-8b-instruct-fp8 |
 
 ## Potential improvements
 
