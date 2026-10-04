@@ -77,7 +77,7 @@ export class ChatterDurableObject extends DurableObject<Env> {
 		{
 			try {
 				console.log("Trying to send: " + messages)	
-				const response: any = await this.env.AI.run("@cf/meta/llama-3.1-8b-instruct",
+				const response: any = await this.env.AI.run(this.env.MODEL,
 					{
 						max_tokens: 512,
 						messages: messages
